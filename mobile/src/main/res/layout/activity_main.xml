@@ -18,39 +18,43 @@
 
             <TextView
                 android:text="Lisa &#xA;"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="100dp"
                 android:background="#0066CC"
                 android:textColor="#FFF"
+                android:layout_marginBottom="20dp"
                 android:lines="1"/>
             <TextView
                 android:text="Lisa &#xA;"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="100dp"
                 android:background="#0066CC"
                 android:textColor="#FFF"
+                android:layout_marginBottom="20dp"
                 android:lines="1"/>
             <TextView
                 android:text="Lisa &#xA;"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="100dp"
                 android:background="#0066CC"
                 android:textColor="#FFF"
+                android:layout_marginBottom="20dp"
                 android:lines="1"/>
             <TextView
                 android:text="John &#xA;"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="100dp"
                 android:background="#0066CC"
                 android:textColor="#FFF"
+                android:layout_marginBottom="20dp"
                 android:lines="1"/>
             <TextView
                 android:text="Peter &#xA;"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="100dp"
                 android:background="#0066CC"
