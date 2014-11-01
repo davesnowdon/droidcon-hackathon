@@ -10,7 +10,7 @@
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="200dp">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,24 +20,42 @@
                 android:text="Lisa &#xA;"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="70dp"/>
+                android:textSize="100dp"
+                android:background="#0066CC"
+                android:textColor="#FFF"
+                android:lines="1"/>
+            <TextView
+                android:text="Lisa &#xA;"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="100dp"
+                android:background="#0066CC"
+                android:textColor="#FFF"
+                android:lines="1"/>
+            <TextView
+                android:text="Lisa &#xA;"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="100dp"
+                android:background="#0066CC"
+                android:textColor="#FFF"
+                android:lines="1"/>
+            <TextView
+                android:text="John &#xA;"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="100dp"
+                android:background="#0066CC"
+                android:textColor="#FFF"
+                android:lines="1"/>
             <TextView
                 android:text="Peter &#xA;"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="70dp"/>
-            <TextView
-                android:text="Manuel &#xA;"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="70dp"/>
-
-            <TextView
-                android:text="Igor &#xA;"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="70dp"/>
-
+                android:textSize="100dp"
+                android:background="#0066CC"
+                android:textColor="#FFF"
+                android:lines="1"/>
         </LinearLayout>
     </ScrollView>
 
