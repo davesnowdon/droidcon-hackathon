@@ -5,6 +5,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+//Code for creating a dynamic list of users:
+// http://www.coderzheaven.com/2011/03/12/creating-scrolling-listview-in-android/
+
+//Fragments are on:
+// http://developer.android.com/guide/components/fragments.html
 
 public class Main extends Activity {
 
