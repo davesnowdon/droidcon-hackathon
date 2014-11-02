@@ -10,76 +10,55 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.view.View.OnTouchListener;
+import java.util.ArrayList;
+import java.util.List;
 
-//Code for creating a dynamic list of users:
-// http://www.coderzheaven.com/2011/03/12/creating-scrolling-listview-in-android/
-
-//Fragments are on:
-// http://developer.android.com/guide/components/fragments.html
 
 public class Main extends Activity {
-//    Button b1;
-    TextView t1;
-    LinearLayout l1;
+    ListView list;
+    private List<String> List_of_persons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        b1 = (Button) findViewById(R.id.b1);
-//
-//        b1.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                FragmentManager fm = getFragmentManager();
-//                FragmentTransaction ft = fm.beginTransaction();
-//                FragmentOne f1 = new FragmentOne();
-//                ft.add(R.id.fr1_id, f1);
-//                ft.addToBackStack("f1");
-//                ft.commit();
-//            }
-//        });
 
-        l1 = (LinearLayout) findViewById(R.id.l1);
-
-        l1.setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return false;
-            }
-        });
-
-        t1 = (TextView) findViewById(R.id.t1);
-
-        t1.setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                switch(event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                    case MotionEvent.ACTION_POINTER_UP:
-                    case MotionEvent.ACTION_CANCEL:
-                        FragmentManager fm = getFragmentManager();
-                        FragmentTransaction ft = fm.beginTransaction();
-                        FragmentOne f1 = new FragmentOne();
-                        ft.add(R.id.fr1_id, f1);
-                        ft.addToBackStack("f1");
-                        ft.commit();
-                        return true;
-                    default:
-                        return false;
-
-                }
-            }
-        });
+        List_of_persons = new ArrayList<String>();
+        list = (ListView)findViewById(R.id.listview);
+        CreateListView();
     }
 
+    private void CreateListView()
+    {
+        List_of_persons.add("Maria");
+        List_of_persons.add("Peter");
+        List_of_persons.add("Sarah");
+        List_of_persons.add("John");
+        List_of_persons.add("Chloe");
 
+        list.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, List_of_persons));
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,long arg3)
+            {
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                FragmentOne f1 = new FragmentOne(List_of_persons.get(arg2));
+                ft.add(R.id.fr1_id, f1);
+                ft.addToBackStack("f1");
+                ft.commit();            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
