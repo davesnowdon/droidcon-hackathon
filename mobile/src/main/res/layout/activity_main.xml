@@ -14,14 +14,13 @@
         android:layout_width="fill_parent"
         android:layout_height="500dip"
         android:layout_gravity="fill_vertical"
-        android:layout_alignParentTop="true"
-        >
+        android:layout_alignParentTop="true">
     </ListView>
 
     <RelativeLayout
         android:id="@+id/fr1_id"
         android:layout_width="fill_parent"
         android:layout_height="500dp">
-
     </RelativeLayout>
+
 </RelativeLayout>

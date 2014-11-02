@@ -44,7 +44,7 @@ public class Main extends Activity {
         List_of_persons.add("John");
         List_of_persons.add("Chloe");
 
-        list.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, List_of_persons));
+        list.setAdapter(new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.label, List_of_persons));
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
