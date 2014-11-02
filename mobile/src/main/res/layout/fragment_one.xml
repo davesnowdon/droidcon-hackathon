@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="520dp"
+    android:layout_height="600dp"
     android:background="#0066CC"
+    android:orientation="vertical"
     android:textColor="#FFF" >
+
 
     <TextView
         android:id="@+id/t1"
-        android:text="Person Name"
+        android:text="Name"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
+        android:layout_height="212dp"
         android:textSize="100dp"
         android:background="#0066CC"
+        android:gravity="center"
         android:textColor="#FFF"/>
+
+    <TextView
+        android:id="@+id/t2"
+        android:text="Heart Rate"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:textSize="60dp"
+        android:layout_below="@+id/t1"
+        android:background="#FFFF"
+        android:textColor="#FFD700"/>
+
+    <TextView
+        android:id="@+id/t3"
+        android:text="24"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:textSize="100dp"
+        android:gravity="center"
+        android:layout_below="@+id/t1"
+        android:background="#FFFF"
+        android:textColor="#FFD700"/>
 </LinearLayout>
