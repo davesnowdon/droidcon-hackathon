@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aldebaran.qimessaging.Application;
@@ -32,7 +33,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+
 public class Main extends Activity {
+    public static TextView mHeartRateView;
+
     private static final String TAG = Main.class.getName();
     private static final int HEIGHT = 480;
     private static final int WIDTH = 640;
