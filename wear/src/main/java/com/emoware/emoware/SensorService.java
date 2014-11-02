@@ -25,8 +25,8 @@ public class SensorService extends IntentService {
     private static final long CONNECTION_TIME_OUT_MS = 5000;
 
     public static final String HEART_RATE_CHANGED = "HeartRateChanged";
-    public static final String DATA_SEPARATOR = ":";
 
+    HeartRateMonitor monitor = null;
 
     private String nodeId = null;
 
@@ -36,16 +36,40 @@ public class SensorService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent workIntent) {
-        // Gets data from the incoming Intent
-        String dataString = workIntent.getDataString();
+        //Log.e(TAG, "onHandleIntent: " + workIntent.getDataString());
+        String action = Util.getAction(workIntent.getData());
+        String dataString = Util.getData(workIntent.getData());
+        Log.i(TAG, "action = "+action+", data = "+dataString);
 
-        if (dataString.startsWith(Constants.URI_HEART_RATE)) {
-            Log.i(TAG, "heart rate changed");
-            String values[] = dataString.split(DATA_SEPARATOR);
-            if (values.length > 1) {
-                final String heartRateStr = values[1];
-                sendHeartRate(heartRateStr);
-            }
+        switch (action) {
+            case Constants.URI_SENSOR_CONTROL:
+                switch (dataString) {
+                    case Constants.START:
+                        if (null == monitor) {
+                            Log.i(TAG, "Starting sensors");
+                            monitor = new HeartRateMonitor(this);
+                            monitor.start();
+                        }
+                        break;
+                    case Constants.STOP:
+                        if (null != monitor) {
+                            Log.i(TAG, "Stopping sensors");
+                            monitor.stop();
+                            monitor = null;
+                        }
+                        break;
+                }
+                break;
+            case Constants.URI_HEART_RATE:
+                Log.i(TAG, "heart rate changed");
+                String values[] = dataString.split(Constants.DATA_SEPARATOR);
+                if (values.length > 1) {
+                    final String heartRateStr = values[1];
+                    sendHeartRate(heartRateStr);
+                }
+                break;
+            default:
+                Log.e(TAG, "Unexpected action = "+action);
         }
     }
 

@@ -54,9 +54,8 @@ public class HeartRateMonitor implements SensorEventListener {
 
     protected void sendHeartRate(String heartRate) {
         Log.i(TAG, "sending heart rate = " + heartRate);
-        Uri uri = Uri.parse(Constants.URI_HEART_RATE + heartRate);
         Intent mServiceIntent = new Intent(context, SensorService.class);
-        mServiceIntent.setData(uri);
+        mServiceIntent.setData(Util.makeControlUri(Constants.URI_HEART_RATE, heartRate));
         context.startService(mServiceIntent);
     }
 }

@@ -1,28 +1,18 @@
-package com.emoware.emoware;
+package com.emoware.emoware.activities;
 
 import android.app.Activity;
-import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
-import android.util.Log;
 import android.widget.TextView;
 
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.wearable.Node;
-import com.google.android.gms.wearable.NodeApi;
-import com.google.android.gms.wearable.Wearable;
+import com.emoware.emoware.HeartRateMonitor;
+import com.emoware.emoware.R;
 
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
-public class WearHome extends Activity  {
+public class PhotoAlertActivity extends Activity  {
 
-    private static final String TAG = WearHome.class.getName();
+    private static final String TAG = PhotoAlertActivity.class.getName();
 
     private TextView mTextView;
 
