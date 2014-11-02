@@ -4,5 +4,7 @@
     <string name="app_name">EmoWare</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="connect_nao" >Connect to NAO</string>
+    <string name="connect_myo" >Connect to MYO</string>
+    <string name="robot_ip" >Robot IP</string>
 </resources>
