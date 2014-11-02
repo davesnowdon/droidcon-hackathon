@@ -5,24 +5,23 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:layout_marginLeft="4px"
+        android:layout_width="250px"
+        android:layout_height="250px"
+        android:layout_marginLeft="0px"
         android:layout_marginRight="10px"
-        android:layout_marginTop="70px"
-        android:src="@drawable/ic_launcher" >
+        android:layout_marginTop="0px"
+        android:src="@drawable/jairo" >
     </ImageView>
 
     <TextView
         android:id="@+id/label"
-        android:text="Lisa &#xA;"
+        android:text="Lisa"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="100dp"
+        android:gravity="center"
+        android:layout_height="250px"
+        android:textSize="40dp"
         android:background="#0066CC"
-        android:textColor="#FFF"
-        android:layout_marginBottom="20dp"
-        android:lines="1" >
+        android:textColor="#FFF" >
     </TextView>
 
 </LinearLayout>

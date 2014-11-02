@@ -27,7 +27,7 @@ public class FragmentOne extends Fragment {
         View v = inflater.inflate(R.layout.fragment_one, container, false);
         mTextView = (TextView) v.findViewById(R.id.t1);
         mTextView.setText(mPersonName);
-
+        Main.mHeartRateView = (TextView) v.findViewById(R.id.t3);
         return v;
     }
 }
