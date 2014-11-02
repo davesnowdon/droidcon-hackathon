@@ -62,11 +62,7 @@ public class SensorService extends IntentService {
                 break;
             case Constants.URI_HEART_RATE:
                 Log.i(TAG, "heart rate changed");
-                String values[] = dataString.split(Constants.DATA_SEPARATOR);
-                if (values.length > 1) {
-                    final String heartRateStr = values[1];
-                    sendHeartRate(heartRateStr);
-                }
+                sendHeartRate(dataString);
                 break;
             default:
                 Log.e(TAG, "Unexpected action = "+action);

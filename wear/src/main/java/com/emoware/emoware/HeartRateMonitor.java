@@ -19,6 +19,8 @@ public class HeartRateMonitor implements SensorEventListener {
     private Sensor mHeartRateSensor;
     private Context context;
 
+    private String lastHeartRate = "";
+
     public HeartRateMonitor(Context context) {
         this.context = context;
     }
@@ -41,9 +43,13 @@ public class HeartRateMonitor implements SensorEventListener {
         if(sensorEvent.values[0] > 0){
                 Log.d(TAG, "sensor event: " + sensorEvent.accuracy + " = " + sensorEvent.values[0]);
                 String heartRateStr = String.valueOf(sensorEvent.values[0]);
-                sendHeartRate(heartRateStr);
-                //accuracy.setText("Accuracy: "+sensorEvent.accuracy);
-                //sensorInformation.setText(sensorEvent.sensor.toString());
+                // only send changes
+                if (!lastHeartRate.equals(heartRateStr)) {
+                    sendHeartRate(heartRateStr);
+                    //accuracy.setText("Accuracy: "+sensorEvent.accuracy);
+                    //sensorInformation.setText(sensorEvent.sensor.toString());
+                    lastHeartRate = heartRateStr;
+                }
         }
     }
 
