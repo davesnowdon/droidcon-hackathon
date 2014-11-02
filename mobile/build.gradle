@@ -16,7 +16,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
-    
+
     buildTypes {
         release {
             runProguard false
@@ -29,4 +29,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     wearApp project(':wear')
     compile 'com.google.android.gms:play-services-wearable:+'
+    compile files('libs/java-qimessaging-helper.jar')
+    compile files('libs/qimessaging-2.0.2.1-android.jar')
 }
