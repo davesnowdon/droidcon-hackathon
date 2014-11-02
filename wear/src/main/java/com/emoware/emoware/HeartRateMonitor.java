@@ -41,7 +41,7 @@ public class HeartRateMonitor implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         if(sensorEvent.values[0] > 0){
-                Log.d(TAG, "sensor event: " + sensorEvent.accuracy + " = " + sensorEvent.values[0]);
+                Log.v(TAG, "sensor event: " + sensorEvent.accuracy + " = " + sensorEvent.values[0]);
                 String heartRateStr = String.valueOf(sensorEvent.values[0]);
                 // only send changes
                 if (!lastHeartRate.equals(heartRateStr)) {

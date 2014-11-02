@@ -14,7 +14,8 @@ public class ListenerService extends WearableListenerService {
     @Override
     public void onMessageReceived(MessageEvent messageEvent) {
         nodeId = messageEvent.getSourceNodeId();
-        final String msg = messageEvent.getPath() +  String.valueOf(messageEvent.getData());
+        final String heartRate = new String(messageEvent.getData());
+        final String msg = messageEvent.getPath() + " " + heartRate;
         Log.i(TAG, "received message = "+msg);
         showToast(msg);
     }
