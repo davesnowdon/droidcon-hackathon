@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:background="#3A7124">
+    android:layout_height="520dp"
+    android:background="#0066CC"
+    android:textColor="#FFF" >
+
+
+    <TextView
+        android:id="@+id/t1"
+        android:text="Lisa \nis \nhungry\n..."
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:textSize="100dp"
+        android:background="#0066CC"
+        android:textColor="#FFF"/>
 </LinearLayout>
